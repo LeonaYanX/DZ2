@@ -3,10 +3,11 @@
 System.Console.WriteLine("Enter the number");
 int N = Convert.ToInt32(Console.ReadLine());
 int countOfNum = 0;
-long baseN = N/10;
+int baseN = N/10;
 if(baseN==0)
 {
 countOfNum = 1;
+Console.Write(N + ",");
 
 }
 else
@@ -17,14 +18,18 @@ else
         countOfNum = countOfNum +1;
     }
     
-}
+
 
 int[] numbersOfN = new int[countOfNum+1];
-for(int i = 0;i<=countOfNum ; i++ )
+for(int i = countOfNum;i>=0 ; i-- )
 {
 numbersOfN[i] = N % 10;
 N = N/10;
-Console.Write(numbersOfN[i] +",");
+}
+foreach(int e in numbersOfN)
+{
+    Console.Write(e +",");
+}
 }
 
 
